@@ -4,8 +4,8 @@ services:
         build: 
             context: "${IMAGES}/confluence"
             dockerfile: "Dockerfile"
-        image: "docs/confluence:0.0.1"
-        container_name: "confluence-0.0.1"
+        image: "docs/confluence:7.0.4 "
+        container_name: "confluence-7.0.4 "
         ports: 
             - "8090:8090"
             - "80:8090"
@@ -14,8 +14,8 @@ services:
         build: 
             context: "${IMAGES}/mysql"
             dockerfile: "Dockerfile"
-        image: "docs/mysql:0.0.1"
-        container_name: "mysql-0.0.1"
+        image: "docs/mysql:5.7.29"
+        container_name: "mysql-5.7.29"
         environment:
             MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
             MYSQL_DATABASE: "${MYSQL_DATABASE}"
