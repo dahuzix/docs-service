@@ -4,8 +4,8 @@ services:
         build: 
             context: "${IMAGES}/confluence"
             dockerfile: "Dockerfile"
-        image: "docs/confluence:7.0.4"
-        container_name: "confluence-7.0.4"
+        image: "docs/confluence:7.3.4"
+        container_name: "confluence-7.3.4"
         ports: 
             - "8090:8090"
             - "80:8090"
@@ -24,6 +24,7 @@ services:
         ports: 
             - "3306:3306"
         restart: "always"
+        privileged: true
         volumes: 
             - "${VOLUMES}/mysql/conf:/etc/mysql"
             - "${VOLUMES}/mysql/data:/var/lib/mysql"
