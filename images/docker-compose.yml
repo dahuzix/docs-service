@@ -1,0 +1,29 @@
+version: "3.7"
+services: 
+    confluence:
+        build: 
+            context: "."
+            dockerfile: "confluence/Dockerfile"
+        image: "docs/confluence:0.0.1"
+        container_name: "confluence-0.0.1"
+        ports: 
+            - "8090:8090"
+            - "80:8090"
+        restart: "always"
+    mysql:
+        build: 
+            context: "."
+            dockerfile: "mysql/Dockerfile"
+        image: "docs/mysql:0.0.1"
+        container_name: "mysql-0.0.1"
+        environment:
+            MYSQL_ROOT_PASSWORD: "admin"
+            MYSQL_DATABASE: "confluence"
+            MYSQL_USER: "uconfluence"
+            MYSQL_PASSWORD: "pconfluence"
+        ports: 
+            - "3306:3306"
+        restart: always
+        volumes: 
+            - "../$PWD/volumes/mysql:/etc/mysql"
+            - "../$PWD/volumes/mysql/data:/var/lib/mysql"
