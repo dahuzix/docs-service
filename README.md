@@ -9,6 +9,7 @@ a confluence service based on docker
 ## 编译镜像
 
 ```js
+
 docker-compose build
 
 ```
@@ -16,16 +17,20 @@ docker-compose build
 ## 启动镜像
 
 ```js
+
 docker-compose up -d
+
 ```
 
 ## 破解
 
 ```js
+
 docker exec confluence-7.3.4  
     java -jar /opt/atlassian/confluence/atlassian-agent.jar
     -p conf
     -m data@data.com
-    -o http://127.0.0.1
+    -o http://192.168.123.175
     -s BJTS-QYFC-PCVL-5L09
+
 ```
