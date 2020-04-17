@@ -10,6 +10,8 @@ services:
             - "8090:8090"
             - "80:8090"
         restart: "always"
+        volumes: 
+            - "${VOLUMES}/confluence/application-data:/var/atlassian/application-data/confluence"
     mysql:
         build: 
             context: "${IMAGES}/mysql"
