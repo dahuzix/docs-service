@@ -28,5 +28,5 @@ services:
         restart: "always"
         privileged: true
         volumes: 
-            - "${VOLUMES}/mysql/conf:/etc/mysql"
+            - "${VOLUMES}/mysql/conf:/etc/mysql/conf.d"
             - "${VOLUMES}/mysql/data:/var/lib/mysql"
