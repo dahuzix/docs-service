@@ -1,7 +1,7 @@
 # 一个Dockerfile
 
 # confluence镜像源
-FROM atlassian/confluence-server:7.3.4
+FROM atlassian/confluence-server:7.3.5
 
 # 运行用户
 USER root
